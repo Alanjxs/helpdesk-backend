@@ -17,6 +17,7 @@ public class Cliente extends Pessoa{
 
 	public Cliente() {
 		super();
+		
 		addPerfil(Perfil.CLIENTE);
 	}
 
