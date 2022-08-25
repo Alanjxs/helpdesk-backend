@@ -1,0 +1,20 @@
+[33m3632f9e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m findAll para chamado
+[33m549d669[m findById para chamado
+[33me02afdb[m CRUD para cliente implementado
+[33m499d883[m delete para tecnico implementado
+[33maaf95c5[m metodo PUT para Tecnico implemetado
+[33m2ae934b[m Validação nos campos de criação de novo usuário
+[33m8d049dd[m exceção para cpf e email já cadastrados
+[33m7f675f7[m Endpoint create para Tecnico
+[33m298cc1a[m Endpoint findall para Tecnico
+[33md086a18[m Exceção para objeto não encontrado
+[33m609b1c8[m Padrão DTO para Tecnico
+[33m9582ed9[m Endpoint findById para Tecnico
+[33m1aced13[m protegendo aplicação contra serialização
+[33mebe186f[m Perfil de Desenvolvimento
+[33mb8a7769[m Perfil de teste Criado
+[33m42ae4be[m repositories criados
+[33m672b35f[m anotacoes JPA para classes de dominio
+[33m09bfe40[m Classes de dominio iniciadas
+[33ma2667f0[m tipos enumerados criados
+[33mc455454[m projeto iniciado
