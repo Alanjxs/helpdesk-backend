@@ -24,13 +24,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private static final String[] PUBLIC_MATCHERS = {"/h2-console/**"};
 	
+	//interface que representa o ambiente atual que o app está sendo executado
 	@Autowired
-	private Environment env; //interface que representa o ambiente atual que o app está sendo executado
+	private Environment env; 
 	@Autowired
 	private JWTUtil jwtUtil;
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
+	/*
+	 * Desabilitar a proteção contra o ataque csrf
+	 * Depois garantir que a sessão de usuário não vai ser criada
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		if(Arrays.asList(env.getActiveProfiles()).contains("test")) {
@@ -51,7 +56,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEndcoder());
 	}
 	
-	
+	/*
+	 * Liberar de forma explicíta as configurações de cross-origin
+	 * Liberar as requisições para o meu Back-end
+	 * Para receber requisições de múltiplas fontes
+	 */
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
@@ -60,7 +69,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
-	
+	/*
+	 * Adicionar a nossa senha criptografada ao BD 
+	 */
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEndcoder() {
 		return new BCryptPasswordEncoder();
